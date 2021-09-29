@@ -1,0 +1,48 @@
+helm create helloworld
+
+ls -lart | grep helloworld
+
+tree helloworld 
+
+cd helloworld
+vi values.yaml 
+
+helm install <FIRST_ARGUMENT_RELEASE_NAME> <SECOND_ARGUMENT_CHART_NAME
+
+helm install myhelloworld helloworld
+
+
+. Get the application URL by running these commands:
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services myhellworld-helloworld)
+  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT
+
+helm list -a
+
+kubectl get service
+
+Helm relies on bitnami chart
+helm install redis bitnami/redis
+
+add : Add chart repository
+list : List chart repository
+update : Update the chart information locally
+index : For generating the index file
+remove : Remove chart repository
+
+helm repo add <REPOSITORY_NAME> <REPOSITORY_URL>
+
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+helm search repo bitnami
+
+helm repo list
+
+helm repo update
+
+helm repo index helloworld
+
+cat helloworld/index.yaml 
+
+helm repo remove bitnami
+
